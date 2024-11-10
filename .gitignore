@@ -1,0 +1,8 @@
+# Ignore Vitis
+Vitis_Embedded_Lin_2024.1_0522_2023.tar.gz
+
+# Ignore Rust build artifacts
+target/
+
+# Ignore binaries used to run the build
+resources/

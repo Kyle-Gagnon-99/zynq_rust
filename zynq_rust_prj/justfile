@@ -1,0 +1,16 @@
+# Load environment variables from the .env file
+set dotenv-load
+set export
+
+#export RUSTFLAGS := '-C link-arg=-Tmemory.x'
+
+default: build program_board
+
+# Programs The Board
+program_board:
+    @echo "Programming the Zynq Board with HW server @ $HW_SERVER"
+    @vitis -s scripts/program_board.py --hw-server $HW_SERVER
+
+build:
+    @echo "Building Rust bare-metal binary"
+    cargo build --target zynq_target.json

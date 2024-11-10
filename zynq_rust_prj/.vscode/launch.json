@@ -1,0 +1,40 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Rust GDB Debugging",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/target/zynq_target/debug/zynq_bin",
+            "miDebuggerServerAddress": "host.docker.internal:3000",
+            "miDebuggerPath": "/usr/bin/gdb-multiarch",
+            "stopAtEntry": true,
+            "cwd": "${workspaceFolder}",
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "logging": {
+                "engineLogging": true,
+                "trace": true,
+                "traceResponse": true,
+                "exceptions": true
+            },
+            "targetArchitecture": "arm",
+            "symbolLoadInfo": {
+                "loadAll": true,
+                "exceptionList": "",
+            },
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Add symbol file with specific load address",
+                    "text": "add-symbol-file ${workspaceFolder}/target/zynq_target/debug/zynq_bin 0x00100000"
+                }
+            ],
+            "preLaunchTask": "Load FSBL and PL"
+        }
+    ]
+}

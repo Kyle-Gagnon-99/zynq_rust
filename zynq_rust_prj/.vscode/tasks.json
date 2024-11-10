@@ -1,0 +1,13 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Load FSBL and PL",
+            "type": "shell",
+            "command": "/opt/xilinx/Vitis/2024.1/bin/vitis",
+            "args": ["-s", "${workspaceFolder}/scripts/program_board.py", "--skip-programming", "--debug"],
+            "problemMatcher": [],
+            "group": "build"
+        }
+    ]
+}

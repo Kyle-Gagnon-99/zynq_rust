@@ -1,0 +1,21 @@
+[workspace]
+resolver = "2"
+members = ["libregisters", "libzynq_dev", "zynq_bin"]
+
+[workspace.package]
+edition = "2021"
+authors = ["Kyle Gagnon"]
+description = "A workspace for the Zynq project."
+
+[profile.dev]
+debug = true
+panic = "abort"
+
+[profile.release]
+codegen-units = 1
+opt-level = 'z'
+lto = true
+incremental = false
+rpath = false
+debug = false
+panic = "abort"

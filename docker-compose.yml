@@ -1,0 +1,11 @@
+version: '3.7'
+services:
+  rust_dev:
+    image: zynqrust:latest
+    tty: true
+    stdin_open: true
+    volumes:
+      - ./zynq_rust_prj:/workspace
+    ports:
+      - "3121:3121"
+      - "3000:3000"

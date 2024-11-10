@@ -1,0 +1,9 @@
+[build]
+target = "zynq_target.json"
+
+[target.zynq_target]
+rustflags = ["-C", "link-arg=-Tmemory.x", "-C", "panic=abort"]
+linker = "arm-none-eabi-gcc"
+
+[unstable]
+build-std = ["core", "compiler_builtins", "alloc"]
