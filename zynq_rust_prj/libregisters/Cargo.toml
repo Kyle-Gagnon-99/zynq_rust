@@ -1,0 +1,9 @@
+[package]
+name = "libregisters"
+version = "0.1.0"
+authors.workspace = true
+edition.workspace = true
+description.workspace = true
+
+[dependencies]
+volatile-register = "0.2.2"

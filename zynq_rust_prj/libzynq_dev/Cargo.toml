@@ -1,0 +1,11 @@
+[package]
+name = "libzynq_dev"
+version = "0.1.0"
+authors.workspace = true
+edition.workspace = true
+description.workspace = true
+
+[dependencies]
+#bitfields = "0.2.0"
+bitflags = "2.6.0"
+libregisters = { path = "../libregisters" }
